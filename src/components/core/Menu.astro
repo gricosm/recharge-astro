@@ -1,0 +1,58 @@
+<button id="hamburger" class="hamburger" aria-label="Open menu">
+  <svg
+    aria-hidden="true"
+    class="astro-kg7c5xhc astro-zkgtwxbr"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    style="--sl-icon-size: 1em;"
+    ><path
+      d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"
+    ></path>
+  </svg>
+</button>
+
+<nav
+  id="menu"
+  class="menu fixed inset-0 hidden flex-col items-center justify-center bg-indigo-950"
+>
+  <button
+    id="close"
+    class="close absolute right-5 top-5"
+    aria-label="Close menu"
+  >
+    <svg
+      aria-hidden="true"
+      class="astro-kg7c5xhc astro-zkgtwxbr"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="M6 6L18 18M6 18L18 6"></path>
+    </svg>
+  </button>
+
+  <ul>
+    <li><a href="/product" class="block p-4 text-xl">PRODUCTO</a></li>
+    <li><a href="/about" class="block p-4 text-xl">SOBRE NOSOTROS</a></li>
+    <li><a href="/news" class="block p-4 text-xl">NOTICIAS</a></li>
+    <li><a href="/contact" class="block p-4 text-xl">CONTACTO</a></li>
+  </ul>
+  <div class="language-switcher absolute bottom-5">ES | EU | EN</div>
+</nav>
+
+<script type="module">
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
+  const close = document.getElementById("close");
+
+  hamburger?.addEventListener("click", () => {
+    menu?.classList.remove("hidden");
+  });
+
+  close?.addEventListener("click", () => {
+    menu?.classList.add("hidden");
+  });
+</script>

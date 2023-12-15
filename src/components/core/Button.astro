@@ -1,0 +1,27 @@
+---
+export interface Props {
+  href: string;
+  ariaLabel?: string;
+  disabled?: boolean;
+}
+
+const { href, ariaLabel, disabled = false } = Astro.props;
+---
+
+<button>
+  <a
+    href={disabled ? "#" : href}
+    aria-label={ariaLabel}
+    aria-disabled={disabled}
+  >
+    <slot />
+  </a>
+</button>
+
+<style>
+  button {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 122px;
+    background: var(--ink-dark, #1f1e40);
+  }
+</style>

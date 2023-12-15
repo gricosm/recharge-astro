@@ -1,0 +1,17 @@
+---
+export interface Props {
+  title?: string;
+  text?: string;
+}
+
+const { title, text } = Astro.props;
+---
+
+<div class="flex-1 rounded bg-zinc-100 p-4 shadow">
+  <h2
+    class="h-[113px] w-[70px] font-['Suprema'] text-[90px] font-bold leading-[108px] text-emerald-400"
+  >
+    {title}
+  </h2>
+  <p>{text}</p>
+</div>
