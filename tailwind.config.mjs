@@ -12,18 +12,26 @@ export default {
         'custom-dark': '#1F1E40',
       },
       fontFamily: {
-        suprema: ['Suprema', 'sans-serif'],
+        'suprema': ['"Suprema"', 'sans-serif'],
+      },
+      fontWeight: {
+        'thin': 200,
+        'light': 300,
+        'normal': 400,
+        'medium': 500,
+        'semibold': 600,
+        'bold': 700,
+        'extrabold': 800,
+        'black': 900,
       },
       fontSize: {
-        fontSize: {
-          'sm': '0.6875rem', // 11px
-          'base': '1rem',      // 16px
-          'lg': '1.4375rem', // 23px
-          'xl': '2rem',      // 32px
-          '2xl': '2.8125rem', // 45px
-          '3xl': '4rem',     // 64px
-          '4xl': '5.625rem', // 90px
-        },
+        'sm': '0.6875rem', // 11px
+        'base': '1rem',      // 16px
+        'lg': '1.4375rem', // 23px
+        'xl': '2rem',      // 32px
+        '2xl': '2.8125rem', // 45px
+        '3xl': '4rem',     // 64px
+        '4xl': '5.625rem', // 90px
       },
       lineHeight: {
         'extra-loose': '1.414',
