@@ -39,4 +39,12 @@ export default {
     },
   },
 	plugins: [],
+  safelist: [
+    'text-custom-gray',
+    'text-custom-teal',
+    'text-custom-blue',
+    'text-custom-green',
+    'text-custom-dark-green',
+    'text-custom-dark',
+  ],
 }

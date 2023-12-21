@@ -1,11 +1,10 @@
-<button id="hamburger" class="hamburger" aria-label="Open menu">
+<button id="hamburger" class="md:hidden" aria-label="Open menu">
   <svg
     aria-hidden="true"
-    class="astro-kg7c5xhc astro-zkgtwxbr"
-    width="16"
-    height="16"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
-    fill="currentColor"
+    fill="#F4F4F4"
     style="--sl-icon-size: 1em;"
     ><path
       d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"
@@ -13,27 +12,33 @@
   </svg>
 </button>
 
+<button id="close" class="hidden" aria-label="Close menu">
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M18 6L6 18"
+      stroke="#F4F4F4"
+      stroke-width="2"
+      stroke-linecap="square"
+      stroke-linejoin="round"></path>
+    <path
+      d="M6 6L18 18"
+      stroke="#F4F4F4"
+      stroke-width="2"
+      stroke-linecap="square"
+      stroke-linejoin="round"></path>
+  </svg>
+</button>
+
 <nav
   id="menu"
-  class="menu fixed inset-0 hidden flex-col items-center justify-center bg-indigo-950"
+  class="fixed inset-0 top-[50px] hidden flex-col items-center justify-center bg-indigo-950 text-white"
 >
-  <button
-    id="close"
-    class="close absolute right-5 top-5"
-    aria-label="Close menu"
-  >
-    <svg
-      aria-hidden="true"
-      class="astro-kg7c5xhc astro-zkgtwxbr"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-    >
-      <path d="M6 6L18 18M6 18L18 6"></path>
-    </svg>
-  </button>
-
   <ul>
     <li><a href="/product" class="block p-4 text-xl">PRODUCTO</a></li>
     <li><a href="/about" class="block p-4 text-xl">SOBRE NOSOTROS</a></li>
@@ -50,9 +55,13 @@
 
   hamburger?.addEventListener("click", () => {
     menu?.classList.remove("hidden");
+    hamburger?.classList.add("hidden");
+    close?.classList.remove("hidden");
   });
 
   close?.addEventListener("click", () => {
+    hamburger?.classList.remove("hidden");
+    close?.classList.add("hidden");
     menu?.classList.add("hidden");
   });
 </script>
