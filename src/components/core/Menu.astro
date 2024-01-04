@@ -1,3 +1,26 @@
+<nav id="menu-desktop" class="flex flex-row items-center gap-6 text-white">
+  <a href="/product">Producto</a>
+  <a href="/about">Sobre Nosotros</a>
+  <a href="/news">Noticias</a>
+  <a href="/contact">Contacto</a>
+
+  <svg
+    width="2"
+    height="33"
+    viewBox="0 0 2 33"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M1 0V16.25V32.5" stroke="#F4F4F4" stroke-width="0.5"></path>
+  </svg>
+
+  <div class="language-switcher flex gap-3">
+    <a href="">ES</a>
+    <a href="">EU</a>
+    <a href="">EN</a>
+  </div>
+</nav>
+
 <button id="hamburger" class="md:hidden" aria-label="Open menu">
   <svg
     aria-hidden="true"
@@ -47,6 +70,16 @@
   </ul>
   <div class="language-switcher absolute bottom-5">ES | EU | EN</div>
 </nav>
+
+<style>
+  .lenguage-switcher {
+  }
+  @media (max-width: 767px) {
+    #menu-desktop {
+      display: none;
+    }
+  }
+</style>
 
 <script type="module">
   const hamburger = document.getElementById("hamburger");

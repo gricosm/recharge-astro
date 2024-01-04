@@ -1,26 +1,231 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
+import ArrowTitle from "@components/core/ArrowTitle.astro";
+import { Image } from "astro:assets";
+import pexelsImage from "@assets/images/pexels.png";
+import impactIcon from "@assets/svg/impact.svg";
+import trebecularGrid from "@assets/svg/trebecular-grid.svg";
+import auxeticaGrid from "@assets/svg/auxetica-grid.svg";
 ---
 
 <MainLayout title="Product" description="Product Page">
-  <h1>Conoce nuestro producto</h1>
+  <div class="px-4 py-12">
+    <h1 class="text-5xl font-bold text-custom-dark">Conoce nuestro producto</h1>
 
-  <p>
-    Nuestros sistemas de protección Recharge vienen a maximizar el ciclo de vida
-    de los bogies, reducir costes de mantenimiento y proporcionar una ventaja
-    competitiva gracias al desarrollo de una tecnología propia.
-  </p>
+    <p class="mb-8 mt-5 text-custom-dark">
+      Nuestros sistemas de protección Recharge vienen a maximizar el ciclo de
+      vida de los bogies, reducir costes de mantenimiento y proporcionar una
+      ventaja competitiva gracias al desarrollo de una tecnología propia.
+    </p>
 
-  <p>
-    La solución Recharge sustituye los sistemas de protección basados en
-    recubrimientos y/o pinturas que impiden las tareas de inspección y el
-    mantenimiento del bogie a través de una solución de protección retirable,
-    modular, personalizable, reparable y reutilizable fabricada en materiales
-    compuestos reciclados.
-  </p>
+    <!-- Section Know How -->
 
-  <p>
-    La innovación tecnológica reside en el empleo de estructuras celulares que
-    permiten un comportamiento auxético de los sistemas de protección.
-  </p>
+    <section>
+      <ArrowTitle title="¿QUIERES SABER CÓMO?" colorText="custom-dark" />
+
+      <p class="mt-5">
+        La solución <span class="italic">Recharge</span> sustituye los sistemas
+        de protección basados en recubrimientos y/o pinturas que impiden las
+        tareas de inspección y el mantenimiento del bogie a través de una
+        solución de protección retirable, modular, personalizable, reparable y
+        reutilizable fabricada en materiales compuestos reciclados.
+        <br />
+        <br />
+         La innovación tecnológica reside en el empleo de estructuras celulares
+        que permiten un comportamiento auxético de los sistemas de protección.
+      </p>
+    </section>
+
+    <!-- Card with SVG -->
+
+    <div class="recharge-solution-card mt-5 bg-custom-dark text-custom-gray">
+      <section class="grid grid-flow-col-dense grid-cols-3">
+        <p class="col-span-2">
+          La solución de absorbedor de impacto* para eje montado es capaz de
+          absorber 9 veces la energía de impacto a baja velocidad, hasta
+          120km/h.
+        </p>
+        <div class="col-span-1">
+          <Image src={impactIcon} alt="Impact Icon" />
+        </div>
+      </section>
+
+      <p class="mt-4 text-sm">
+        * Validación de impacto con una punta cónica de 120º como exige la
+        normativa.
+      </p>
+    </div>
+
+    <div class="my-8 w-full border border-custom-dark-green opacity-60"></div>
+
+    <!-- Section 40% -->
+    <section class="background-number">
+      <p class="text-xl font-semibold text-custom-dark md:text-2xl">
+        Mejora la capacidad de absorción de energía de impacto hasta un 40%
+      </p>
+    </section>
+
+    <div class="my-8 w-full border border-custom-dark-green opacity-60"></div>
+
+    <!-- Section Know the Process -->
+    <section class="my-6">
+      <ArrowTitle
+        title="¿QUIERES CONOCER NUESTRO PROCESO?"
+        colorText="custom-dark"
+      />
+
+      <Image src={pexelsImage} alt="Pexels Image" class="my-4" />
+
+      <ArrowTitle
+        title="Materiales"
+        colorText="custom-dark"
+        textSize="2xl"
+        fontType="semibold"
+        arrowDown={true}
+      />
+
+      <p>
+        Recientes avances en estructuras ferroviarias buscan diseños ligeros
+        para reducir el consumo energético y la carga sobre la vía. Los
+        polímeros reforzados con fibras (FRP) son destacados en la industria
+        ferroviaria por ser ligeros, fuertes, rígidos y resistentes a la
+        corrosión. Los materiales termoplásticos reforzados con fibra (FRTP)
+        están ganando terreno por su rapidez de procesamiento, reciclabilidad y
+        capacidad de absorción de energía para componentes estructurales
+        impactados.
+        <br />
+        <br />
+        <span class="italic">Recharge Recycling to Protect</span>
+         fabricación sistema de protecciones empleando poliamidas y
+        polipropilenos reforzados con fibras de vidrio, acordes con la normativa
+        a fuego EN-45545-2 y colaborando con los principales fabricantes de
+        materias primas.
+      </p>
+
+      <div class="my-8 w-full border border-custom-dark-green opacity-60"></div>
+
+      <ArrowTitle
+        title="Núcleos complejos y estructuras celulares"
+        colorText="custom-dark"
+        textSize="2xl"
+        fontType="semibold"
+        arrowDown={true}
+      />
+
+      <p>
+        Los materiales compuestos son una opción destacada para crear
+        estructuras ligeras y resistentes en la industria del transporte. Los
+        núcleos son fundamentales en estas estructuras, ya que distribuyen
+        cargas y mejora la resistencia y rigidez, logrando un equilibrio óptimo
+        entre peso y rendimiento. Recharge suministra núcleos y estructuras
+        celulares de tipo hexagonales y corrugados, destacando las estructuras
+        hexagonales re-entrantes (auxéticas) o bio-inspiradas (trabecular) por
+        sus excelentes propiedades a impacto.
+      </p>
+
+      <section
+        id="card-block"
+        class="my-8 flex w-full flex-col place-items-center md:flex-row md:items-stretch md:justify-around"
+      >
+        <div class="grid-card aspect-grid-card bg-custom-dark">
+          <Image
+            src={trebecularGrid}
+            alt="Trabecular icon"
+            class="rounded-full"
+          />
+          <p class="text-center text-custom-gray md:text-lg">
+            Trabecular (escarabajo): Presenta una resistencia a impacto superior
+            a la estructura honeycomb convencional.
+          </p>
+        </div>
+
+        <div class="grid-card aspect-grid-card bg-custom-dark">
+          <Image src={auxeticaGrid} alt="Auxeticas icon" class="rounded-full" />
+          <p class="text-center text-custom-gray md:text-lg">
+            Auxeticas: Estructuras que bajo carga compresiónse densifican
+            mejoran su capacidad de absorción de energía.
+          </p>
+        </div>
+      </section>
+
+      <div class="my-8 w-full border border-custom-dark-green opacity-60"></div>
+
+      <ArrowTitle
+        title="Tecnologías de fabricación"
+        colorText="custom-dark"
+        textSize="2xl"
+        fontType="semibold"
+        arrowDown={true}
+      />
+
+      <p>
+        La selección de la tecnología más adecuada para la fabricación de piezas
+        en material compuesto depende de mucho factores, como el volumen de
+        producción la complejidad geométrica del componente y las propiedades
+        mecánicas necesarias.
+        <br />
+        <br />
+        <span class="italic">Recharge</span> combina las tecnologías
+        convencionales de transformación de los polímeros como la extrusión, el
+        termo-conformado, GMT o la inyección para la fabricación de sus
+        productos.
+      </p>
+    </section>
+  </div>
 </MainLayout>
+
+<style>
+  .recharge-solution-card {
+    max-width: 46.5rem;
+    height: auto;
+    border-radius: 0.625rem;
+    padding: 1.25rem;
+  }
+
+  .background-number {
+    min-width: 22.5rem;
+    width: auto;
+    max-width: 30.125rem;
+    min-height: 9.375rem;
+    height: auto;
+    max-height: 15.9375rem;
+    position: relative;
+    height: auto;
+    margin: 4rem 0rem;
+  }
+  .background-number::before {
+    position: absolute;
+    content: "40";
+    color: rgba(70, 167, 139, 0.25);
+    font-family: Suprema;
+    font-size: 20rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    top: -50%;
+    z-index: -1;
+  }
+
+  @media (min-width: 768px;) {
+    .background-number::before {
+      font-size: 27rem;
+    }
+  }
+
+  .grid-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    border-radius: 0.625rem;
+    max-width: 32.91206rem;
+    height: auto;
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .grid-card p {
+    overflow: hidden;
+  }
+</style>

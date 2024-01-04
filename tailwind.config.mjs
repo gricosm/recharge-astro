@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
@@ -35,11 +36,26 @@ export default {
       },
       lineHeight: {
         'extra-loose': '1.414',
+      },
+      aspectRatio: {
+        'grid-card': '10 / 9'
       }
     },
   },
 	plugins: [],
   safelist: [
+    'text-sm',
+    'text-lg',
+    'text-xl',
+    'text-2xl',
+    'text-3xl',
+    'text-4xl',
+    'icon-middle-sm',
+    'icon-middle-lg',
+    'icon-middle-xl',
+    'icon-middle-2xl',
+    'icon-middle-3xl',
+    'icon-middle-4xl',
     'text-custom-gray',
     'text-custom-teal',
     'text-custom-blue',

@@ -1,0 +1,34 @@
+@media screen and (min-width: 768px) {
+  .contact-container-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: min-content;
+    grid-template-areas:
+      "header-grid header-grid"
+      "text-grid form-grid"
+      "separator-grid form-grid"
+      "card-grid form-grid";
+    column-gap: 20px;
+    row-gap: 0;
+  }
+
+  .contact-header-grid {
+    grid-area: contact-header-grid;
+  }
+
+  .contact-text-grid {
+    grid-area: contact-text-grid;
+  }
+  .contact-separator-grid {
+    grid-area: contact-separator-grid;
+    height: min-content;
+  }
+
+  .contact-card-grid {
+    grid-area: contact-card-grid;
+  }
+
+  .contact-form-grid {
+    grid-area: contact-form-grid;
+  }
+}

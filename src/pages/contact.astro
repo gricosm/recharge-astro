@@ -3,11 +3,125 @@ import MainLayout from "@layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Contact" description="Contact Page">
-  <h1>Contacto</h1>
-  <p>
-    ¿Quieres saber más sobre nuestro producto o cómo trabajamos? No dudes en
-    ponerte en contacto con nosotros.
-  </p>
+  <div class="px-4 py-12">
+    <section class="container-grid">
+      <h1 class="header-grid text-5xl font-bold text-custom-dark">Contacto</h1>
 
-  <form action=""></form>
+      <p class="text-grid pt-5">
+        ¿Quieres saber más sobre nuestro producto o cómo trabajamos? No dudes en
+        ponerte en contacto con nosotros.
+      </p>
+
+      <div
+        class="separator-grid my-8 w-full border-t border-custom-dark-green opacity-60"
+      >
+      </div>
+
+      <!-- Form -->
+      <form action="" class="form-grid">
+        <div class="pb-6">
+          <label for="name">Nombre: *</label>
+          <input type="text" name="name" required placeholder="Nombre" />
+        </div>
+
+        <div class="pb-6">
+          <label for="email">Email: *</label>
+          <input type="email" name="email" required placeholder="Email" />
+        </div>
+
+        <div class="pb-6">
+          <label for="phone">Número de teléfono: *</label>
+          <input
+            type="tel"
+            name="phone"
+            required
+            placeholder="Número de teléfono"
+          />
+        </div>
+
+        <div class="pb-6">
+          <label for="language">Idioma: *</label>
+          <select name="language" id="language">
+            <option value="es">Castellano</option>
+            <option value="en">English</option>
+            <option value="eu">Euskera</option>
+          </select>
+        </div>
+
+        <div class="pb-6">
+          <label for="message">Mensaje: *</label>
+          <textarea name="message" required placeholder="Mensaje"></textarea>
+        </div>
+
+        <button>Submit</button>
+      </form>
+
+      <div
+        class="my-8 w-full border-t border-custom-dark-green opacity-60 md:hidden"
+      >
+      </div>
+
+      <!-- Card - Recharge Info -->
+      <div class="card-grid">
+        <div class="info-card bg-custom-dark text-custom-gray">
+          <h2 class="text-lg font-bold">Recharge Recycling to Protect</h2>
+          <section>
+            <p class="font-bold">Dirección</p>
+            <p>Hendaia Kalea, 8 Palacio Ducoureau 20301 Irun, Gipuzkoa</p>
+            <p class="font-bold">Teléfono</p>
+            <p>+(34) 677 03 62 83</p>
+            <p class="font-bold">Correo electrónico</p>
+            <p>info@recharge.eus</p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>
 </MainLayout>
+
+<style>
+  @media screen and (min-width: 768px) {
+    .container-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-auto-rows: min-content;
+      grid-template-areas:
+        "header-grid header-grid"
+        "text-grid form-grid"
+        "separator-grid form-grid"
+        "card-grid form-grid";
+      column-gap: 20px;
+      row-gap: 0;
+    }
+
+    .header-grid {
+      grid-area: header-grid;
+    }
+
+    .text-grid {
+      grid-area: text-grid;
+    }
+    .separator-grid {
+      grid-area: separator-grid;
+      height: min-content;
+    }
+
+    .card-grid {
+      grid-area: card-grid;
+    }
+
+    .form-grid {
+      grid-area: form-grid;
+    }
+  }
+
+  .info-card {
+    width: 100%;
+    display: inline-flex;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.125rem;
+    border-radius: 0.625rem;
+  }
+</style>

@@ -1,25 +1,36 @@
 ---
+import { Image } from "astro:assets";
+import arrowIcon from "../../assets/svg/arrow.svg";
+
 interface Props {
   title: string;
   colorText?: string;
+  textSize?: string;
+  fontType?: string;
+  arrowDown?: boolean;
 }
-const { title, colorText } = Astro.props;
+const {
+  title,
+  colorText,
+  textSize = "sm",
+  fontType = "normal",
+  arrowDown = false,
+} = Astro.props;
 ---
 
-<div class="flex items-center">
-  <svg
-    width="6"
-    height="16"
-    viewBox="0 0 6 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g id="Vector">
-      <path
-        id="Vector_2"
-        d="M0 0.84C0.51 -0.28 2.1 -0.28 2.6 0.84L5.72 7.77L2.6 14.7C2.09 15.82 0.5 15.82 0 14.7V0.830001V0.84Z"
-        fill="#6EC2BA"></path>
-    </g>
-  </svg>
-  <p class={`text-${colorText} text-sm pl-3`}>{title}</p>
-</div>
+<p
+  class={`flex items-start gap-3 text-${colorText} text-${textSize} font-${fontType} `}
+>
+  <Image
+    src={arrowIcon}
+    alt="Arrow Icon"
+    class={`${arrowDown ? "arrow-down mt-[0.6em]" : ""}`}
+  />
+  {title}
+</p>
+
+<style>
+  .arrow-down {
+    transform: rotate(90deg);
+  }
+</style>
