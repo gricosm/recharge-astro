@@ -1,0 +1,47 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import ArrowTitle from "@components/core/ArrowTitle.astro";
+import Button from "@components/core/Button.astro";
+import CardBlock from "@components/CardBlock.astro";
+---
+
+<MainLayout title="Recharge" description="Home Recharge Web">
+  <div class="background-pattern">
+    <section class="px-4 py-12">
+      <h1 class="text-5xl font-bold text-custom-dark">¿Qué es Recharge?</h1>
+
+      <p class="py-5">
+        Empresa dedicada al diseño y suministro de protecciones frente impacto
+        para el sector ferroviario.
+      </p>
+
+      <Button href="/about/">About Us</Button>
+
+      <div class="pt-8">
+        <p class="custom-card-green max-w-[44.5rem] text-sm text-white">
+          This project is supported by EIT Urban Mobility, an initiative of the
+          European Institute of Innovation and Technology (EIT), a body of the
+          European Union. EIT Urban Mobility acts to accelerate positive change
+          on mobility to make urban spaces more liveable. Learn more:
+          eiturbanmobility.eu
+        </p>
+      </div>
+    </section>
+
+    <section class="background-dark-blurry">
+      <div class="px-4 pb-8 pt-4">
+        <ArrowTitle title="¿POR QUÉ RECHARGE?" colorText="white" />
+        <h3 class="pt-5 text-xl text-white">
+          Desarrollo flexible, reciclado, ligero: Protegemos lo que importa
+        </h3>
+        <p class="py-5 text-white">
+          Recharge Recycling to Protect suministra absorbedores de energía en el
+          sector ferroviario para la protección de material rodante frente a
+          impacto a hielo o balasto.
+        </p>
+
+        <CardBlock />
+      </div>
+    </section>
+  </div>
+</MainLayout>
