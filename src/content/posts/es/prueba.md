@@ -2,7 +2,7 @@
 title: Hola Mundo
 pubDate: 2022-07-01
 image:
-  url: localhost:4321/assets/images/asier.png
+  url: ../assets/images/asier.png
   alt: Asier's Image
 ---
 
