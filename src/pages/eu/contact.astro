@@ -2,15 +2,17 @@
 import MainLayout from "@layouts/MainLayout.astro";
 ---
 
-<MainLayout title="Contacto" description="Contact Page">
+<MainLayout title="Harremanetarako" description="Contact Page">
   <div class="px-4 py-12 md:px-12">
     <section class="container-grid">
-      <h1 class="header-grid text-5xl font-bold text-custom-dark">Contacto</h1>
+      <h1 class="header-grid text-5xl font-bold text-custom-dark">
+        Harremanetarako
+      </h1>
 
       <div class="info-grid">
         <p class="text-grid pt-5">
-          ¿Quieres saber más sobre nuestro producto o cómo trabajamos? No dudes
-          en ponerte en contacto con nosotros.
+          Gure produktuari buruz edo nola lan egiten dugun jakin nahi duzu?
+          Jarri gurekin harremanetan:
         </p>
 
         <div
@@ -22,11 +24,11 @@ import MainLayout from "@layouts/MainLayout.astro";
           <div class="info-card bg-custom-dark text-custom-gray">
             <h2 class="text-lg font-bold">Recharge Recycling to Protect</h2>
             <section>
-              <p class="font-bold">Dirección</p>
+              <p class="font-bold">Helbidea</p>
               <p>Hendaia Kalea, 8 Palacio Ducoureau 20301 Irun, Gipuzkoa</p>
-              <p class="font-bold">Teléfono</p>
+              <p class="font-bold">Telefono zkia</p>
               <p>+(34) 677 03 62 83</p>
-              <p class="font-bold">Correo electrónico</p>
+              <p class="font-bold">Posta Elektronikoa</p>
               <p>info@recharge.eus</p>
             </section>
           </div>
@@ -34,8 +36,8 @@ import MainLayout from "@layouts/MainLayout.astro";
       </div>
 
       <p class="text-grid pt-5 md:hidden">
-        ¿Quieres saber más sobre nuestro producto o cómo trabajamos? No dudes en
-        ponerte en contacto con nosotros.
+        Gure produktuari buruz edo nola lan egiten dugun jakin nahi duzu? Jarri
+        gurekin harremanetan:
       </p>
 
       <div
@@ -44,29 +46,29 @@ import MainLayout from "@layouts/MainLayout.astro";
       </div>
 
       <!-- Form -->
-      <form action="" class="form-grid">
+      <form action="POST" class="form-grid">
         <div class="pb-6">
-          <label for="name">Nombre: <sup>*</sup></label>
-          <input type="text" name="name" required placeholder="Nombre" />
+          <label for="name">Izena: <sup>*</sup></label>
+          <input type="text" name="name" required placeholder="Izena" />
         </div>
 
         <div class="pb-6">
-          <label for="email">Email: <sup>*</sup></label>
-          <input type="email" name="email" required placeholder="Email" />
-        </div>
-
-        <div class="pb-6">
-          <label for="phone">Número de teléfono: <sup>*</sup></label>
+          <label for="email">Posta Elektronikoa: <sup>*</sup></label>
           <input
-            type="tel"
-            name="phone"
+            type="email"
+            name="email"
             required
-            placeholder="Número de teléfono"
+            placeholder="Posta Elektronikoa"
           />
         </div>
 
         <div class="pb-6">
-          <label for="language">Idioma: <sup>*</sup></label>
+          <label for="phone">Telefono zkia: <sup>*</sup></label>
+          <input type="tel" name="phone" required placeholder="Telefono zkia" />
+        </div>
+
+        <div class="pb-6">
+          <label for="language">Hizkuntza: <sup>*</sup></label>
           <select name="language" id="language">
             <option value="es">Castellano</option>
             <option value="en">English</option>
@@ -75,11 +77,11 @@ import MainLayout from "@layouts/MainLayout.astro";
         </div>
 
         <div class="pb-6">
-          <label for="message">Mensaje: *</label>
-          <textarea name="message" required placeholder="Mensaje"></textarea>
+          <label for="message">Mezu: <sup>*</sup></label>
+          <textarea name="message" required placeholder="Mezu"></textarea>
         </div>
 
-        <button>Enviar</button>
+        <button>Bidali</button>
       </form>
 
       <div
@@ -92,11 +94,11 @@ import MainLayout from "@layouts/MainLayout.astro";
         <div class="info-card bg-custom-dark text-custom-gray">
           <h2 class="text-lg font-bold">Recharge Recycling to Protect</h2>
           <section>
-            <p class="font-bold">Dirección</p>
+            <p class="font-bold">Helbidea</p>
             <p>Hendaia Kalea, 8 Palacio Ducoureau 20301 Irun, Gipuzkoa</p>
-            <p class="font-bold">Teléfono</p>
+            <p class="font-bold">Telefono zkia</p>
             <p>+(34) 677 03 62 83</p>
-            <p class="font-bold">Correo electrónico</p>
+            <p class="font-bold">Posta Elektronikoa</p>
             <p>info@recharge.eus</p>
           </section>
         </div>

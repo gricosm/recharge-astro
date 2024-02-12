@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets";
+import europeanLogos from "@assets/images/footer-eu.png";
+---
+
+<footer
+  class="flex w-full justify-center rounded-t-[0.625rem] bg-custom-gray py-4 drop-shadow-md"
+>
+  <div class="flex flex-col items-center">
+    <p class="mb-2 text-sm">Co-funded by the European Union</p>
+    <Image src={europeanLogos} alt="European Union Logos" />
+  </div>
+</footer>

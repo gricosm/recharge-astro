@@ -10,6 +10,12 @@ html {
   scroll-padding: 2rem;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 button {
   padding: 0.5rem 1.5rem;
   border-radius: 122px;
@@ -34,6 +40,23 @@ input {
 textarea {
   border-radius: 0.625rem;
   min-height: 8.6875rem;
+}
+
+footer {
+  border-radius: 0.625rem 0.625rem 0rem 0rem;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .background-pattern {

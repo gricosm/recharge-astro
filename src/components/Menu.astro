@@ -59,7 +59,7 @@
 </button>
 
 <nav
-  id="menu"
+  id="menu-mobile"
   class="fixed inset-0 top-[50px] hidden flex-col items-center justify-center bg-indigo-950 text-white"
 >
   <ul>
@@ -68,11 +68,14 @@
     <li><a href="/news" class="block p-4 text-xl">NOTICIAS</a></li>
     <li><a href="/contact" class="block p-4 text-xl">CONTACTO</a></li>
   </ul>
-  <div class="language-switcher absolute bottom-5">ES | EU | EN</div>
+  <div class="language-switcher absolute bottom-5 pl-4">ES | EU | EN</div>
 </nav>
 
 <style>
   .lenguage-switcher {
+  }
+  #menu-mobile {
+    z-index: 2;
   }
   @media (max-width: 767px) {
     #menu-desktop {
@@ -82,19 +85,22 @@
 </style>
 
 <script type="module">
+  const body = document.body;
   const hamburger = document.getElementById("hamburger");
-  const menu = document.getElementById("menu");
+  const menu = document.getElementById("menu-mobile");
   const close = document.getElementById("close");
 
   hamburger?.addEventListener("click", () => {
     menu?.classList.remove("hidden");
     hamburger?.classList.add("hidden");
     close?.classList.remove("hidden");
+    body?.classList.add("no-scroll");
   });
 
   close?.addEventListener("click", () => {
     hamburger?.classList.remove("hidden");
     close?.classList.add("hidden");
     menu?.classList.add("hidden");
+    body?.classList.remove("no-scroll");
   });
 </script>
