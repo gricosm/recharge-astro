@@ -12,22 +12,22 @@ const smtpServer = "smtp.titan.email";
 const smtpPort = 587;
 
 // IMAP (receiving) server details
-const imapServer = "imap.titan.email";
-const imapPort = 993;
+// const imapServer = "imap.titan.email";
+// const imapPort = 993;
 
 async function sendEmail(props: emailFunctionProps) {
   const transporter = nodemailer.createTransport({
     host: smtpServer,
     port: smtpPort,
     auth: {
-      user: import.meta.env.OUTLOOK_EMAIL,
-      pass: import.meta.env.OUTLOOK_PASSWORD,
+      user: import.meta.env.RECHARGE_EMAIL,
+      pass: import.meta.env.RECHARGE_PASSWORD,
     },
   });
 
   // Message object
   const message = {
-    from: import.meta.env.OUTLOOK_EMAIL,
+    from: import.meta.env.RECHARGE_EMAIL,
     to: props.email,
     subject: props.subject,
     text: props.text,

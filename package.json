@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/check": "0.5.3",
     "@astrojs/tailwind": "5.1.0",
+    "@types/nodemailer": "^6.4.14",
     "astro": "4.3.6",
     "nodemailer": "^6.9.9",
     "tailwind": "^4.0.0",
