@@ -1,8 +1,21 @@
+---
+import LanguagePicker from "@components/LanguagePicker.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
 <nav id="menu-desktop" class="flex flex-row items-center gap-6 text-white">
-  <a href="/product">Producto</a>
-  <a href="/about">Sobre Nosotros</a>
-  <a href="/news">Noticias</a>
-  <a href="/contact">Contacto</a>
+  <a href={translatePath("/product")}>{t("nav.product")?.toUpperCase()}</a>
+  <a href={translatePath("/about")}>{t("nav.about")?.toUpperCase()}</a>
+  <a href={translatePath("/news")}>{t("nav.news")?.toUpperCase()}</a>
+  <a href={translatePath("/contact")}>{t("nav.contact")?.toUpperCase()}</a>
 
   <svg
     width="2"
@@ -14,11 +27,7 @@
     <path d="M1 0V16.25V32.5" stroke="#F4F4F4" stroke-width="0.5"></path>
   </svg>
 
-  <div class="language-switcher flex gap-3">
-    <a href="">ES</a>
-    <a href="">EU</a>
-    <a href="">EN</a>
-  </div>
+  <LanguagePicker class="flex gap-3" />
 </nav>
 
 <button id="hamburger" class="md:hidden" aria-label="Open menu">
@@ -63,19 +72,32 @@
   class="fixed inset-0 top-[50px] hidden flex-col items-center justify-center bg-indigo-950 text-white"
 >
   <ul>
-    <li><a href="/product" class="block p-4 text-xl">PRODUCTO</a></li>
-    <li><a href="/about" class="block p-4 text-xl">SOBRE NOSOTROS</a></li>
-    <li><a href="/news" class="block p-4 text-xl">NOTICIAS</a></li>
-    <li><a href="/contact" class="block p-4 text-xl">CONTACTO</a></li>
+    <li>
+      <a href={translatePath("/product")} class="block p-4 text-xl"
+        >{t("nav.product")?.toUpperCase()}</a
+      >
+    </li>
+    <li>
+      <a href={translatePath("/about")} class="block p-4 text-xl"
+        >{t("nav.about")?.toUpperCase()}</a
+      >
+    </li>
+    <li>
+      <a href={translatePath("/news")} class="block p-4 text-xl"
+        >{t("nav.news")?.toUpperCase()}</a
+      >
+    </li>
+    <li>
+      <a href={translatePath("/contact")} class="block p-4 text-xl"
+        >{t("nav.contact")?.toUpperCase()}</a
+      >
+    </li>
   </ul>
-  <div class="language-switcher absolute bottom-5 pl-4">
-    <a href="">ES</a> | <a href="">EU</a> | <a href="">EN</a>
-  </div>
+
+  <LanguagePicker class="absolute bottom-5 pl-4" />
 </nav>
 
 <style>
-  .lenguage-switcher {
-  }
   #menu-mobile {
     z-index: 2;
   }

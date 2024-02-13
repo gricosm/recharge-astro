@@ -1,0 +1,25 @@
+---
+import { languages } from "@i18n/ui";
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils";
+
+const url = new URL(Astro.request.url);
+const currentLang = getLangFromUrl(url);
+const translatePath = useTranslatedPath(currentLang);
+---
+
+<ul>
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a href={translatePath(url.pathname, lang)}>{label.toUpperCase()}</a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    display: flex;
+    gap: 1rem;
+  }
+</style>
