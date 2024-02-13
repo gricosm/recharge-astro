@@ -22,9 +22,9 @@ export const ui = {
     "nav.news": "News",
   },
   eu: {
-    "nav.product": "Produktoa",
-    "nav.about": "About",
-    "nav.contact": "Contact",
-    "nav.news": "News",
+    "nav.product": "Produktua",
+    "nav.about": "Nor Gara",
+    "nav.contact": "Harremanetarako",
+    "nav.news": "Albisteak",
   },
 } as const;

@@ -2,12 +2,16 @@
 import Menu from "@components/Menu.astro";
 import { Image } from "astro:assets";
 import rechargeLogo from "@assets/svg/recharge-logo.svg";
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <header
   class="flex h-[50px] w-full items-center justify-between bg-indigo-950 px-4"
 >
-  <a href="/">
+  <a href={translatePath("/")}>
     <Image src={rechargeLogo} alt="Recharge Logo" />
   </a>
 
