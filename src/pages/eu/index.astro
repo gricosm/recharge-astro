@@ -3,6 +3,10 @@ import MainLayout from "@layouts/MainLayout.astro";
 import ArrowTitle from "@components/ArrowTitle.astro";
 import Button from "@components/Button.astro";
 import Card from "@components/Card.astro";
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 
 const cards = [
   {
@@ -36,7 +40,7 @@ const cards = [
         egiteko, babesgailuak disienatu eta hornitzen dituen empresa gara.
       </p>
 
-      <Button href="/about/">Guri Buruz</Button>
+      <Button href={translatePath("/about")}>Nor Gara</Button>
 
       <div class="pt-8">
         <p class="custom-card-green max-w-[44.5rem] text-sm text-white">
