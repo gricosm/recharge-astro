@@ -1,21 +1,94 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "@layouts/MainLayout.astro";
+import Button from "@components/Button.astro";
 
-const spanishDocsEntries = await getCollection("blog", ({ id }) => {
-  return id.startsWith("es/");
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+const blogEntries = await getCollection("blog", ({ id }) => {
+  return id.startsWith("eu/");
 });
 ---
 
 <MainLayout title="Noticias" description="Noticias de Recharge">
-  <ul>
-    {
-      spanishDocsEntries.map(entry => (
-        <li>
-          <h2>{entry.data.title}</h2>
-          <img src={entry.data.image.url} alt={entry.data.image.alt} />
-        </li>
-      ))
-    }
-  </ul>
+  <div class="px-4 py-12 md:px-12">
+    <h1 class="text-5xl font-bold text-custom-dark">Noticias</h1>
+    <div class="pt-4">
+      <ul>
+        {
+          blogEntries.map(entry => (
+            <article class="bg-custom-dark shadow-md">
+              <figure>
+                <img src="/images/test.png" alt={entry.data.image.alt} />
+              </figure>
+              <section>
+                <p class="text-xs text-custom-green">
+                  {entry.data.pubDate.toLocaleDateString()}
+                </p>
+
+                <h3 class="text-lg font-semibold text-white">
+                  {entry.data.title}
+                </h3>
+                <p class="text-overflow-ellipsis w-full overflow-hidden whitespace-nowrap text-white">
+                  {entry.data.description}
+                </p>
+                <footer>
+                  <Button
+                    href={translatePath(`/blog/${entry.slug}`)}
+                    background="green"
+                  >
+                    Leer
+                  </Button>
+                </footer>
+              </section>
+            </article>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
 </MainLayout>
+
+<style>
+  article {
+    width: 325px;
+    height: 550px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+
+  figure {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  figure img {
+    width: auto;
+    height: 295px;
+    object-fit: cover;
+  }
+
+  section {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  section footer {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  @media (min-width: 768px;) {
+    article {
+      width: 550px;
+      height: 325px;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+</style>

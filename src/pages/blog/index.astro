@@ -3,6 +3,11 @@ import { getCollection } from "astro:content";
 import MainLayout from "@layouts/MainLayout.astro";
 import Button from "@components/Button.astro";
 
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
 const spanishDocsEntries = await getCollection("blog", ({ id }) => {
   return id.startsWith("es/");
 });
@@ -27,12 +32,14 @@ const spanishDocsEntries = await getCollection("blog", ({ id }) => {
                 <h3 class="text-lg font-semibold text-white">
                   {entry.data.title}
                 </h3>
-                <p class=" text-white">
-                  Recharge participa en un webinar hablando de "Núcleo Auxético
-                  Impresión 3D" - Mondragón Universitatea.
+                <p class="text-overflow-ellipsis w-full overflow-hidden whitespace-nowrap text-white">
+                  {entry.data.description}
                 </p>
                 <footer>
-                  <Button href="" background="green">
+                  <Button
+                    href={translatePath(`/blog/${entry.slug}`)}
+                    background="green"
+                  >
                     Leer
                   </Button>
                 </footer>
