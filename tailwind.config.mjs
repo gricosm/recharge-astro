@@ -62,5 +62,11 @@ export default {
     'text-custom-green',
     'text-custom-dark-green',
     'text-custom-dark',
+    'bg-custom-gray',
+    'bg-custom-teal',
+    'bg-custom-blue',
+    'bg-custom-green',
+    'bg-custom-dark-green',
+    'bg-custom-dark',
   ],
 }

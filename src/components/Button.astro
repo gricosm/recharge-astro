@@ -3,12 +3,13 @@ export interface Props {
   href: string;
   ariaLabel?: string;
   disabled?: boolean;
+  background?: string;
 }
 
-const { href, ariaLabel, disabled = false } = Astro.props;
+const { href, ariaLabel, disabled = false, background = "dark" } = Astro.props;
 ---
 
-<button>
+<button class={`bg-custom-${background}`}>
   <a
     href={disabled ? "#" : href}
     aria-label={ariaLabel}
@@ -22,7 +23,6 @@ const { href, ariaLabel, disabled = false } = Astro.props;
   button {
     padding: 0.5rem 1.5rem;
     border-radius: 122px;
-    background: var(--ink-dark, #1f1e40);
     color: white;
   }
 </style>
