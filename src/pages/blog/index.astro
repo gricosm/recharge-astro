@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import MainLayout from "@layouts/MainLayout.astro";
 import Button from "@components/Button.astro";
 
-const spanishDocsEntries = await getCollection("posts", ({ id }) => {
+const spanishDocsEntries = await getCollection("blog", ({ id }) => {
   return id.startsWith("es/");
 });
 ---

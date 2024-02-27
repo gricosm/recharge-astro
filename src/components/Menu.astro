@@ -14,7 +14,7 @@ const translatePath = useTranslatedPath(lang);
 <nav id="menu-desktop" class="flex flex-row items-center gap-6 text-white">
   <a href={translatePath("/product")}>{t("nav.product")?.toUpperCase()}</a>
   <a href={translatePath("/about")}>{t("nav.about")?.toUpperCase()}</a>
-  <a href={translatePath("/news")}>{t("nav.news")?.toUpperCase()}</a>
+  <a href={translatePath("/blog")}>{t("nav.news")?.toUpperCase()}</a>
   <a href={translatePath("/contact")}>{t("nav.contact")?.toUpperCase()}</a>
 
   <svg
@@ -83,7 +83,7 @@ const translatePath = useTranslatedPath(lang);
       >
     </li>
     <li>
-      <a href={translatePath("/news")} class="block p-4 text-xl"
+      <a href={translatePath("/blog")} class="block p-4 text-xl"
         >{t("nav.news")?.toUpperCase()}</a
       >
     </li>
