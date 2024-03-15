@@ -1,0 +1,40 @@
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<form action="POST">
+  <div class="pb-6">
+    <label for="name">{t("form.name")}: <sup>*</sup></label>
+    <input type="text" name="name" required placeholder={t("form.name")} />
+  </div>
+
+  <div class="pb-6">
+    <label for="email">{t("form.email")}: <sup>*</sup></label>
+    <input type="email" name="email" required placeholder={t("form.email")} />
+  </div>
+
+  <div class="pb-6">
+    <label for="phone">{t("form.phone")}: <sup>*</sup></label>
+    <input type="tel" name="phone" required placeholder={t("form.phone")} />
+  </div>
+
+  <div class="pb-6">
+    <label for="language">{t("form.language")}: <sup>*</sup></label>
+    <select name="language" id="language" class="select-custom">
+      <option value="es">Castellano</option>
+      <option value="en">English</option>
+      <option value="eu">Euskera</option>
+    </select>
+  </div>
+
+  <div class="pb-6">
+    <label for="message">{t("form.message")}: *</label>
+    <textarea name="message" required placeholder={t("form.message")}
+    ></textarea>
+  </div>
+
+  <button>{t("form.send")}</button>
+</form>

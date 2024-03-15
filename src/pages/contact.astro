@@ -1,5 +1,7 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
+import InfoCard from "@components/InfoCard.astro";
+import Form from "@components/Form.astro";
 ---
 
 <MainLayout title="Contacto" description="Contact Page">
@@ -8,104 +10,37 @@ import MainLayout from "@layouts/MainLayout.astro";
       <h1 class="header-grid text-5xl font-bold text-custom-dark">Contacto</h1>
 
       <div class="info-grid">
-        <p class="text-grid pt-5">
+        <p class="pt-5">
           ¿Quieres saber más sobre nuestro producto o cómo trabajamos? No dudes
           en ponerte en contacto con nosotros.
         </p>
 
-        <div
-          class="separator-grid my-4 w-full border-t border-custom-dark-green opacity-60"
-        >
+        <div class="my-4 w-full border-t border-custom-dark-green opacity-60">
         </div>
 
-        <div class="card-grid">
-          <div class="info-card bg-custom-dark text-custom-gray">
-            <h2 class="text-lg font-bold">Recharge Recycling to Protect</h2>
-            <section>
-              <p class="font-bold">Dirección</p>
-              <p>Hendaia Kalea, 8 Palacio Ducoureau 20301 Irun, Gipuzkoa</p>
-              <p class="font-bold">Teléfono</p>
-              <p>+(34) 677 03 62 83</p>
-              <p class="font-bold">Correo electrónico</p>
-              <p>info@recharge.eus</p>
-            </section>
-          </div>
-        </div>
-      </div>
-
-      <p class="text-grid pt-5 md:hidden">
-        ¿Quieres saber más sobre nuestro producto o cómo trabajamos? No dudes en
-        ponerte en contacto con nosotros.
-      </p>
-
-      <div
-        class="separator-grid my-8 w-full border-t border-custom-dark-green opacity-60 md:my-0 md:hidden"
-      >
+        <div class="hidden-phone"><InfoCard /></div>
       </div>
 
       <!-- Form -->
-      <form action="POST" class="form-grid">
-        <div class="pb-6">
-          <label for="name">Nombre: <sup>*</sup></label>
-          <input type="text" name="name" required placeholder="Nombre" />
-        </div>
-
-        <div class="pb-6">
-          <label for="email">Email: <sup>*</sup></label>
-          <input type="email" name="email" required placeholder="Email" />
-        </div>
-
-        <div class="pb-6">
-          <label for="phone">Número de teléfono: <sup>*</sup></label>
-          <input
-            type="tel"
-            name="phone"
-            required
-            placeholder="Número de teléfono"
-          />
-        </div>
-
-        <div class="pb-6">
-          <label for="language">Idioma: <sup>*</sup></label>
-          <select name="language" id="language">
-            <option value="es">Castellano</option>
-            <option value="en">English</option>
-            <option value="eu">Euskera</option>
-          </select>
-        </div>
-
-        <div class="pb-6">
-          <label for="message">Mensaje: *</label>
-          <textarea name="message" required placeholder="Mensaje"></textarea>
-        </div>
-
-        <button>Enviar</button>
-      </form>
+      <div class="form-grid"><Form /></div>
 
       <div
-        class="my-8 w-full border-t border-custom-dark-green opacity-60 md:hidden"
+        class="my-4 w-full border-t border-custom-dark-green opacity-60 md:hidden"
       >
       </div>
 
-      <!-- Card - Recharge Info -->
-      <div class="card-grid md:hidden">
-        <div class="info-card bg-custom-dark text-custom-gray">
-          <h2 class="text-lg font-bold">Recharge Recycling to Protect</h2>
-          <section>
-            <p class="font-bold">Dirección</p>
-            <p>Hendaia Kalea, 8 Palacio Ducoureau 20301 Irun, Gipuzkoa</p>
-            <p class="font-bold">Teléfono</p>
-            <p>+(34) 677 03 62 83</p>
-            <p class="font-bold">Correo electrónico</p>
-            <p>info@recharge.eus</p>
-          </section>
-        </div>
-      </div>
+      <div class="md:hidden"><InfoCard /></div>
     </section>
   </div>
 </MainLayout>
 
 <style>
+  @media screen and (max-width: 767px) {
+    .hidden-phone {
+      display: none;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     .container-grid {
       display: grid;
@@ -129,15 +64,5 @@ import MainLayout from "@layouts/MainLayout.astro";
     .form-grid {
       grid-area: form-grid;
     }
-  }
-
-  .info-card {
-    width: 100%;
-    display: inline-flex;
-    padding: 1.25rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2.125rem;
-    border-radius: 0.625rem;
   }
 </style>

@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ink-dark: #1f1e40;
+  --ink-light: #f4f4f4;
+}
+
 html {
   font-family: "Suprema", sans-serif;
   scroll-behavior: smooth;
@@ -13,6 +18,32 @@ html,
 body {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+@media screen and (min-width: 1440px) and (max-width: 2159px) {
+  main {
+    padding: 0 15%;
+  }
+}
+
+@media screen and (min-width: 2160px) {
+  main {
+    padding: 0 25%;
+  }
+}
+
+footer {
+  border-radius: 0.625rem 0.625rem 0rem 0rem;
 }
 
 button {
@@ -41,8 +72,16 @@ textarea {
   min-height: 8.6875rem;
 }
 
-footer {
-  border-radius: 0.625rem 0.625rem 0rem 0rem;
+@layer components {
+  .select-custom {
+    background-image: url("../assets/svg/arrow-select.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
 }
 
 .container {

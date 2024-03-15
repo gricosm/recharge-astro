@@ -23,6 +23,10 @@ export const ui = {
     "form.language": "Idioma",
     "form.message": "Mensaje",
     "form.send": "Enviar",
+    "infoCard.address": "Dirección",
+    "infoCard.phone": "Teléfono",
+    "infoCard.email": "Correo electrónico",
+    "button.read": "Leer",
   },
   en: {
     "nav.product": "Product",
@@ -38,6 +42,10 @@ export const ui = {
     "form.language": "Language",
     "form.message": "Message",
     "form.send": "Send",
+    "infoCard.address": "Address",
+    "infoCard.phone": "Phone",
+    "infoCard.email": "Email",
+    "button.read": "Read",
   },
   eu: {
     "nav.product": "Produktua",
@@ -53,5 +61,9 @@ export const ui = {
     "form.language": "Hizkuntza",
     "form.message": "Mezua",
     "form.send": "Bidali",
+    "infoCard.address": "Helbidea",
+    "infoCard.phone": "Telefono zenbakia",
+    "infoCard.email": "Posta Elektronikoa",
+    "button.read": "Irakurri",
   },
 } as const;
