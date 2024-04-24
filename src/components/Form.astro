@@ -36,5 +36,13 @@ const t = useTranslations(lang);
     ></textarea>
   </div>
 
+  <div class="pb-6">
+    <label for="privacy">{t("form.privacy")}: <sup>*</sup></label>
+    <div class="flex items-center gap-2">
+      <input type="checkbox" name="privacy" required />
+      <a href="/legal">{t("form.privacyMessage")}</a>
+    </div>
+  </div>
+
   <button>{t("form.send")}</button>
 </form>
